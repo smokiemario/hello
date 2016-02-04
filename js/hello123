@@ -1,5 +1,21 @@
 #!/usr/bin/env node
 
+var c = require('skilstak-colors')
+
 'use strict';
 
-console.log("Hello!");
+var printRed = function (name) {
+  console.log(c.cl + c.r + "Hello " + name + c.x);
+}
+var printMulti = function (name) {
+  while (true) {
+    console.log(c.cl + c.multi("Hello " + name) + c.x);
+  }
+}
+var printNice = function (name) {
+  console.log(c.cl + c.y + "Hello there " + name + ". How are you today, " + name + "." + " I had fun talking with you " + name + ". See you later " + name + ".");
+}
+var firstArg = process.argv[2];
+
+
+printNice(firstArg);
